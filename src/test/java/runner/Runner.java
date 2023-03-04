@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json","rerun:target/return.txt"},
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@PTB-2",
-        dryRun = false, // it will run unimplemented steps ,change  to true or false
+        tags = "@MB-206",
+        dryRun = false,  // it will run unimplemented steps ,change  to true (to get snipped codes) or false
         publish=true
 )
 
