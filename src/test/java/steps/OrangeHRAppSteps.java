@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
 import utilities.Driver;
 
+import java.time.Duration;
 import java.util.Map;
 
 public class OrangeHRAppSteps {
@@ -38,7 +39,7 @@ public class OrangeHRAppSteps {
         orangeHomePage.adminBtn.click();
         orangePIMPage.addBtn.click();
 
-        WebDriverWait wait1=new WebDriverWait(driver,10);
+        WebDriverWait wait1=new WebDriverWait(driver, Duration.ofSeconds(10));
         wait1.until(ExpectedConditions.visibilityOf(orangeAdminUserAddPage.password)).sendKeys("Admin134$");
         orangeAdminUserAddPage.dropdown1.click();
         Thread.sleep(3000);
@@ -51,11 +52,11 @@ public class OrangeHRAppSteps {
         driver.findElement(By.xpath("//span[normalize-space()='Enabled']")).click();
 //        orangeAdminUserAddPage.dropdown2.sendKeys(Keys.ARROW_DOWN);
 //        orangeAdminUserAddPage.dropdown2.click();
-        WebDriverWait wait2=new WebDriverWait(driver,10);
+        WebDriverWait wait2=new WebDriverWait(driver,Duration.ofSeconds(10));
         wait2.until(ExpectedConditions.visibilityOf(orangeAdminUserAddPage.confirmPassword)).sendKeys("Admin134$");
         orangeAdminUserAddPage.employeeName.sendKeys("Ammy Doe");
         Thread.sleep(3000);
-        WebDriverWait wait=new WebDriverWait(driver,10);
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("(//div[@role='option'])[1]")))).click();
         orangeAdminUserAddPage.userName.sendKeys("AmmyDoe");
         Thread.sleep(5000);
@@ -76,7 +77,7 @@ public class OrangeHRAppSteps {
         Thread.sleep(3000);
         orangeAdminUserSearchPage.employeeNameBox.sendKeys(data.get("Employee Name"));
         Thread.sleep(3000);
-        WebDriverWait wait=new WebDriverWait(driver,10);
+        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(orangeAdminUserSearchPage.employeeNameChoose)).click();
         orangeAdminUserSearchPage.statusBox.click();
         orangeAdminUserSearchPage.enabledSelection.click();

@@ -19,10 +19,11 @@ public class JDBC1 {
 //        rs.next();0
 //        System.out.println(rs.getString("job_title"));
 
-       // printCountries(stt);
-      //  printDepartmentsByCountries(stt);
-        updateAllEmails(stt);
+  // printCountries(stt);
+       printDepartmentsByCountries(stt);
+      //  updateAllEmails(stt);
     }
+
 
     private static void updateAllEmails(Statement stt) throws SQLException {
         String emailQuery="Select email from employees";

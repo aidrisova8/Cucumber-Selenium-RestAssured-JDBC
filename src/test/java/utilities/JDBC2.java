@@ -26,14 +26,14 @@ public class JDBC2 {
 
         ResultSetMetaData rsMeta = rs.getMetaData();
 
-//        System.out.println("Column count: "+rsMeta.getColumnCount());
-//        System.out.println(rsMeta.getColumnName(10));
-//        System.out.println(rsMeta.getTableName(4));
-//        System.out.println("Is Nullable: "+rsMeta.isNullable(3));
-//
-//        for(int i=1;i<=rsMeta.getColumnCount();i++){
-//            System.out.println("Column #"+i+" : "+rsMeta.getColumnName(i)+" Nullable: "+rsMeta.isNullable(i));
-//        }
+        System.out.println("Column count: "+rsMeta.getColumnCount());
+        System.out.println(rsMeta.getColumnName(10));
+        System.out.println(rsMeta.getTableName(4));
+        System.out.println("Is Nullable: "+rsMeta.isNullable(3));
+
+        for(int i=1;i<=rsMeta.getColumnCount();i++){
+            System.out.println("Column #"+i+" : "+rsMeta.getColumnName(i)+" Nullable: "+rsMeta.isNullable(i));
+        }
 
         Map<Integer,String> map=new HashMap<>();
         map.put(5,"Chicago");

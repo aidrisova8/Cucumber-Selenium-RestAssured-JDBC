@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.UUID;
 
 public class BrowserUtils {
@@ -75,12 +76,12 @@ public class BrowserUtils {
     }
 
     public static WebElement watElementToBeClickable(WebElement element){
-        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         WebElement element1= wait.until((ExpectedConditions.elementToBeClickable(element)));
         return element1;
     }
     public static WebElement waitElementToBeVisible(WebElement element){
-        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         WebElement element1= wait.until((ExpectedConditions.visibilityOf(element)));
         return element1;
     }

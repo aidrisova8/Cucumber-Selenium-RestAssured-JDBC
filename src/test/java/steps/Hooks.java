@@ -10,7 +10,8 @@ import org.openqa.selenium.WebDriver;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
+
 
 public class Hooks {
 
@@ -30,13 +31,17 @@ public class Hooks {
             driver.get(ConfigReader.getProperty("RedShelfAppURL"));
         }else if(webApp.equals("Guru99")){
             driver.get(ConfigReader.getProperty("Guru99AppURL"));
+        }else if(webApp.equals("XYZBank")){
+            driver.get(ConfigReader.getProperty("XYZBankURL"));
+        } else if (webApp.equals("Ninja")) {
+            driver.get(ConfigReader.getProperty("NinjaAppURL"));
         }
     }
 
     @Before
     public void setup(){
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().deleteAllCookies();
         System.out.println("Method runs before scenario");
     }
@@ -47,7 +52,7 @@ public class Hooks {
             byte[] screenshot=((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","myFailure");
         }
-        driver.quit();
+      //  driver.quit();
         System.out.println("Method runs after scenario");
     }
 }

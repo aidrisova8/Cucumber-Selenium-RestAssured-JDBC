@@ -1,9 +1,10 @@
 package utilities;
 
-import org.apache.poi.xssf.binary.XSSFBUtils;
-
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class JDBC3 {
     public static void main(String[] args) throws SQLException {
@@ -28,11 +29,10 @@ public class JDBC3 {
         System.out.println(tableData);
 
         //employee fName emp_id 100
-
-      //  findEmployeeWithEmpId(tableData,100);
+  findEmployeeWithEmpId(tableData,100);
 
         //find emp's email for given Fname
-        findEmployeeEmailWithEmpFname(tableData,"Aigul");
+ //  findEmployeeEmailWithEmpFname(tableData,"Aigul");
 
     }
 
